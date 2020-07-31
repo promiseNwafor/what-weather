@@ -4,19 +4,23 @@ function CheckWeather(props) {
   const { handleInput, handleSubmit } = props;
   return (
     <div className="CheckWeather">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Enter City and Country</span>
-      </div>
-      <input type="text" aria-label="First name" className="form-control"
-        name="city" onChange={handleInput} 
-        placeholder="City" />
-      <input type="text" aria-label="Last name" className="form-control"
-        name="country" onChange={handleInput} 
-        placeholder="Country" />
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            onClick={handleSubmit}>Check Weather</button>
+      <h2 className="input-group-text center">CHECK WEATHER</h2>
+      <div class="form-wrap">
+        <div class="form">
+          <p>Country</p>
+          <input type="text" aria-label="Last name" className="form-control block"
+            name="country" onChange={handleInput} 
+            placeholder="Enter Country" />
         </div>
+        <div class="form">
+          <p>City</p>
+          <input type="text" aria-label="First name" className="form-control block"
+            name="city" onChange={handleInput} 
+            placeholder="Enter City" />
+        </div>
+        <button class="btn" type="button" id="button-addon2"
+          onClick={handleSubmit}>QUICK CHECK</button>
+      </div>
     </div>
   );
 }
