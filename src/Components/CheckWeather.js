@@ -13,8 +13,8 @@ function CheckWeather(props) {
       <input type="text" aria-label="Last name" className="form-control"
         name="country" onChange={handleInput} 
         placeholder="Country" />
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+        <div className="input-group-append">
+          <button className="btn btn-outline-secondary" type="button" id="button-addon2"
             onClick={handleSubmit}>Check Weather</button>
         </div>
     </div>
