@@ -4,6 +4,7 @@ function CheckWeather(props) {
   const { handleInput, handleSubmit } = props;
   return (
     <div className="CheckWeather">
+
       <div className="input-group-prepend">
         <span className="input-group-text">Enter City and Country</span>
       </div>
@@ -16,7 +17,11 @@ function CheckWeather(props) {
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="button" id="button-addon2"
             onClick={handleSubmit}>Check Weather</button>
+
         </div>
+        <button class="btn" type="button" id="button-addon2"
+          onClick={handleSubmit}>QUICK CHECK</button>
+      </div>
     </div>
   );
 }
