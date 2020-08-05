@@ -1,33 +1,35 @@
 import React from 'react';
 import './DisplayWeather.css'
 import Windy from '../images/windy.svg'
+import { Link } from "react-router-dom";
 
 function DisplayWeather(props) {
-  const { country, city, temp, humidity, description } = props;
+  const { country, city, temp, humidity, description, handleReset } = props;
 
   return (
     <div className="DisplayWeather">
-      <h1>Result Display</h1>
+      <h1 className="mb-2">Weather Now</h1>
       <img src={Windy} alt="windy"/>
       <div>
-        <p>LOCATION:</p> 
-        <p>{`${city}, ${country}`}</p>
+        <p className="mt-2">LOCATION:</p> 
+        <p className="mt-2 p2">{`${city} ${country}`}</p>
       </div>
       <div>
-        <p>CONDITION:</p> 
-        <p>{description}</p>
+        <p className="mt-2">CONDITION:</p> 
+        <p className="mt-2 p2">{description}</p>
       </div>
       <div>
-        <p>TEMPERATURE:</p> 
-        <p>{temp}</p>
+        <p className="mt-2">TEMPERATURE:</p> 
+        <p className="mt-2 p2">{temp}</p>
       </div>
       <div>
-        <p>HUMIDITY:</p> 
-        <p>{humidity}</p>
+        <p className="mt-2">HUMIDITY:</p> 
+        <p className="mt-2 p2">{humidity}</p>
       </div>
       <div className="resetShare">
-        <button className="reset-btn">Reset</button>
-        <button className="share-btn">Share</button>
+        <button type="reset" className="reset-btn" onClick={handleReset}>
+          <Link to="/check">RESET</Link>
+        </button>
       </div>
     </div>
   );

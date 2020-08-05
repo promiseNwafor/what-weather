@@ -6,6 +6,23 @@
     text-align: center;
     color: #FFF;
 }
+.DisplayWeather div{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.DisplayWeather div > p{
+    width: 200px;
+}
+
+.DisplayWeather .p2{
+    text-transform: capitalize;
+    color: rgb(56, 59, 243);
+    font-size: 2rem;
+}
 
 .resetShare{
     width: 90%;
@@ -29,10 +46,10 @@
 }
 
 .reset-btn{
-    background-color: rgb(50, 50, 206);
+    background-color: rgb(59, 2, 97);
     color: #FFF;
 }
 
 .share-btn{
-    color: rgb(50, 50, 206);
+    color: rgb(59, 2, 97);
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from '../images/logo.png'
 import illustration from '../images/illustration.png'
+import { Link } from "react-router-dom";
+
 
 function Home() {
+
   return (
     <div className="Home">
       <div className="wrap1">
@@ -20,7 +23,9 @@ function Home() {
           Check weather conditions, temperature<br /> and humidity in different locations<br />
           regardless of your current location.
         </p>
-        <button>GET STARTED</button>
+        <button>
+          <Link to="/check">GET STARTED</Link>
+        </button>
       </div>
     </div>
   );

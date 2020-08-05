@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Home from './Components/Home';
 import CheckWeather from './Components/CheckWeather';
 import DisplayWeather from './Components/DisplayWeather';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import './App.css';
 
 const apiKey = "ace89d82c6a482949426d56639c7e414";
@@ -23,7 +24,6 @@ function App() {
       setTemp(res.main.temp)
       setHumidity(res.main.humidity)
       setDescription(res.weather[0].description)
-      console.log(res)
     })
     .catch(err => {
       console.log(err)
@@ -41,20 +41,50 @@ function App() {
     fetchData()
   }
 
+  const handleReset = () => {
+    setCountry('')
+    setCity('')
+    setTemp('')
+    setDescription('')
+    setHumidity('')
+  }
+
 
   return (
-    <div className="App">
-      <Home />
-      <CheckWeather
-        handleInput={handleInput} 
-        handleSubmit={handleSubmit}  />
-      <DisplayWeather
-        country={country} 
-        city={city} 
-        temp={temp} 
-        humidity={humidity} 
-        description={description} />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/check">
+            <CheckWeather
+            handleInput={handleInput} 
+            handleSubmit={handleSubmit} />
+          </Route>
+          <Route path="/display">
+            <DisplayWeather
+            country={country} 
+            city={city} 
+            temp={temp} 
+            humidity={humidity} 
+            description={description}
+            handleReset={handleReset} />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        {/* <Home />
+        <CheckWeather
+          handleInput={handleInput} 
+          handleSubmit={handleSubmit} />
+        <DisplayWeather
+          country={country} 
+          city={city} 
+          temp={temp} 
+          humidity={humidity} 
+          description={description}
+          handleReset={handleReset} /> */}
+      </div>
+    </Router>
   );
 }
 
