@@ -37,6 +37,8 @@
 
 .DisplayWeather{
   width: 100%;
+  height: auto;
+  min-height: 100vh;
   color: rgb(255, 255, 255);
 }
 
@@ -126,6 +128,10 @@ button:hover{
   color: rgb(233, 113, 15);
 }
 
+input:focus{
+  zoom: 1;
+}
+
 @media screen and (max-width: 468px){
   .Home .image{
     width: 90%;
@@ -135,6 +141,13 @@ button:hover{
     padding: 2rem;
     padding-bottom: 3rem;
     width: 95%;
+  }
+  .Home .wrap p{
+    font-size: 18px;
+  }
+  .DisplayWeather{
+    zoom: 1;
+    max-zoom: 1;
   }
 }
 

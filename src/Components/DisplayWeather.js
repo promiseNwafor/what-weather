@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function DisplayWeather(props) {
   const { country, city, temp, humidity, description, handleReset } = props;
+  const tem = temp ? (temp - 273).toFixed(2) : ""
 
   return (
     <div className="DisplayWeather">
@@ -19,15 +20,17 @@ function DisplayWeather(props) {
         <p className="mt-2 p2">{description}</p>
       </div>
       <div>
-        <p className="mt-2">TEMPERATURE:</p> 
-        <p className="mt-2 p2">{temp}</p>
+        <p className="mt-2">TEMPERATURE:</p>
+        <p className="mt-2 p2">{tem}
+          {temp ? <span><sup>o</sup>C</span> : ""}
+        </p>
       </div>
       <div>
         <p className="mt-2">HUMIDITY:</p> 
         <p className="mt-2 p2">{humidity}</p>
       </div>
       <div className="resetShare">
-        <button type="reset" className="reset-btn" onClick={handleReset}>
+        <button type="reset" className="" onClick={handleReset}>
           <Link to="/check">RESET</Link>
         </button>
       </div>
